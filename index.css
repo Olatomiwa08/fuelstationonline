@@ -13,8 +13,10 @@ img{
 body{
     background: white;
     height: 100%;
+    width: 100%;
 }
 .container{
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -64,6 +66,8 @@ nav button{
     align-items: center;
     gap: 10px;
     display: none;
+    background: none;
+    border: none;
 }
 button span {
     width: 100%;
@@ -195,23 +199,36 @@ input::placeholder{
     line-height: 33px;
     text-align: center;
 }
-.about{
+ .about{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 100px 1% 20px;
+    padding: 10px 1% 20px;
 }
-.about .first{
+.about .aboutcontent{
     width: 90%;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.about .abouthead{
+    width: 100%;
+    position: relative;
+    top: 180px;
+}
+.about .abouthead.mobile{
+    display: none;
+}
+.about .firsttext{
+    width: 100%;
+    display: flex;
+    align-items: end;
     justify-content: space-between;
 }
-.about .second{
-    width: 90%;
-}
-.first .firsttext h1{
+
+.abouthead h1{
     font-family: 'Poppins',sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -220,9 +237,12 @@ input::placeholder{
     text-transform: capitalize;
     color: #FF8A01;
 }
-.firsttext h1:nth-child(2){
+.abouthead h1:nth-child(2){
     color: #015682;
     font-size: 46px;
+}
+.firsttext img{
+    position: relative;
 }
 .firsttext p{
     font-family: 'Nunito';
@@ -232,19 +252,21 @@ input::placeholder{
     line-height: 46px;
     color: #595757;
     margin-top: 30px;
-    /* padding: 0 80px 0 0; */
+    width: 50%;
+    /* flex: 1; */
 }
-.firstimg{
-    margin-top: 40px;
+.second{
+    width: 100%;
 }
-.second p {
+.second p{
+    width: 100%;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
     line-height: 46px;
     color: #595757;
-}
+} 
 .fuel{
     display: flex;
     justify-content: center;
@@ -268,7 +290,7 @@ input::placeholder{
     position: relative;
     display: block;
     margin: auto;
-    width: 540px;
+    /* width: 540px; */
     top: 20px;
     height: 10px;
     background: linear-gradient(270deg, rgba(255, 138, 1, 0) 3.7%, #FF8A01 47.73%, rgba(255, 138, 1, 0) 100%);
@@ -450,6 +472,9 @@ input::placeholder{
     line-height: 35px;
     color: #595757;
 }
+.transactionmobile{
+    display: none;
+}
 .transactionimg{
     width: 300px;
     height: 370px;
@@ -526,6 +551,9 @@ input::placeholder{
     order: 2;
     flex-grow: 0;
 }
+.inter{
+    display: none;
+}
 .payment{
     display: flex;
     justify-content: center;
@@ -601,6 +629,13 @@ input::placeholder{
     padding: 50px 0;
     margin-top: 20px;
 }
+.payh1mobile{
+    display: none;
+}
+.faq .road{
+    width: 100%;
+    max-width: 610px;
+}
 .faqhead h1{
     color: #FF8A01;
     font-family: 'Poppins';
@@ -609,7 +644,7 @@ input::placeholder{
 }
 .faqhead p{
     /* padding:0 530px; */
-    width: 700px;
+    /* width: 700px; */
     font-size: 28px;
     font-family: 'Nunito';
     color: #595757;
@@ -770,36 +805,255 @@ hr{
     line-height: 20px;
     color: #FFFFFF;
 }
-/* br{
-    display: none;
-} */
-
-@media (max-width:1250px){
+@media (max-width:500px){
     nav ul{
         display: none;
     }
-    nav .register{ 
+    nav .register{
         display: none;
     }
     nav button{
         display: flex;
     }
-    .payment{
-        flex-direction: column;
+    .firsttext p{
+        width: 100%;
     }
-}
-@media (max-width:600px){
-    main .about .first{
-        display: block;
+    .about .aboutcontent{
+        width: 80%;
+        align-items:last baseline;
     }
-}
-@media (max-width:490px){
-    .home .homecontent h1{
+    .about .abouthead{
         display: none;
     }
-    .search{
-        width: 166px;
+    .about{
+        padding-top: 90px;
     }
-    .home .homecontent .input  button{
-        width: 55px;    }
+    .about .abouthead.mobile{
+        display: block;
+        top: 0px;
+        text-align: left;
+    }
+    .about img{
+        max-width: 237px;
+    }
+    .about .firsttext{
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: first baseline;
+    }
+    .about .abouthead h1{
+    font-weight: 600;
+    font-size: 21px;
+    text-transform: capitalize;
+    color: #015682;
+    }
+    .about  p{
+        font-size: 19px;
+        line-height: 21px;
+    }
+    .fuel{
+
+    }
+    .fuel h1{
+        font-size: 18px;
+    }
+    .fuel h1::after{
+        height: 5px;
+    }
+    .fuel .box{
+        height: 390px;
+    }
+    .box img{
+        width: 65px;
+    }
+    .grid .box h3{
+        font-size: 25px;
+    }
+    .grid .box p{
+        font-size: 16px;
+    }
+    .transaction h1{
+        font-size: 16px;
+        line-height: 23px;
+    }
+    .transaction .transactionimg img{
+        width: 269px;
+    }
+    .transactioncontent{
+        flex-direction: column;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        width: 100%;
+    }
+    .transactionmobile{
+        display: block;
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 35px;
+        color: #595757;
+    }
+    .flash{
+        display: none;
+    }
+    .transaction{
+        height: 431px;
+    }
+    .home h1{
+        display: none;
+    }
+    .transactionimg {
+        position: relative;
+        margin-top: 0;
+        height: 300px;
+    }
+    .transaction .transactionimg .pos{
+        position: absolute;
+        top: -610px;
+        left: 10px;
+    }
+    .transactiontext p{
+     display: none;
+    }
+    .faq{
+        padding-top: 150px;
+    }
+    .payment{
+        flex-direction: column;
+        gap: 2px;
+        justify-content: center;
+        align-items: center;
+    }
+    .payment h1{
+        font-size: 25px;
+    }
+    .payment p{
+        font-size: 18px;
+        text-align: center;
+        line-height: 24px;
+        padding:  0 30px;
+        /* width: 80%; */
+    }
+    .meter{
+        padding: 70px 0;
+    }
+    .meter br{
+        display: none;
+    }
+    .metercontent p{
+        text-align: center;
+    }
+    .paymenttext{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    
+    .home .search{
+        /* width: 166px; */
+        width: auto;
+    }
+    .search input{
+        width: auto;
+    }
+    .home button{
+        width: 75px;
+        /* height: 27px; */
+        font-size: 18px;
+        width: 80px;
+        padding: 0px;
+        font-weight: 500;
+    }
+    .container .transaction{
+        flex-direction: column;
+    }
+    .container .efficiency{
+        display: none;
+    }
+    .contact{
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+        align-items: first baseline;
+        width: 80%;
+        justify-content: center;
+        gap: 70px;
+    }
+    .contact .logs:nth-child(2) {
+        display: none;
+    }
+    .contact .logs:nth-child(3) {
+        display: none;
+    }
+    .contact .logs:nth-child(1) {
+        display: flex;
+    }
+    
+    .foot{
+        display: none;
+    }
+    hr{
+        display: none;
+    }
+    .inter{
+        display: block;
+        margin-bottom: 40px;
+    }
+    .inter h3{
+        font-family: 'Poppins';
+        text-transform: capitalize;
+    }
+    footer{
+        height: 1008px;
+    }
+    .faqsection{
+        padding-top: 100px;
+    }
+    .question{
+        width: 80%;
+        padding: 250px 0;
+    }
+    .question p{
+        font-size: 17px;
+    }
+    .question h1{
+        font-size: 27px;
+    }
+    .faqhead{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .faqhead p{
+        font-size: 20px;
+        width: 70%;
+    }
+    .paymenttext h1{
+        display: none;
+    }
+    .payment img{
+        width: 250px;
+        margin: 5px 0 30px 0;
+    }
+    .payh1mobile{
+        display: block;
+        font-family: 'Poppins';
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 80px;
+        text-transform: capitalize;
+        color: #000000;
+    }
+}
+@media (max-width: 1100px){
+    nav ul{
+        display: none;
+    }
+    nav .register{
+        display: none;
+    }
+    nav button{
+        display: flex;
+    }
 }
