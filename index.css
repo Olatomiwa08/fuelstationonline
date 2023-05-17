@@ -141,13 +141,13 @@ main .home{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 50px;
+    /* gap: 50px; */
 }
 .homecontent h1{
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
     font-size: 64px;
-    line-height: 125.5%;
+    /* line-height: 125.5%; */
     text-align: center;
     color: #FFFFFF;
     text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
@@ -155,6 +155,7 @@ main .home{
 .input{
     display: flex;
     gap: 20px;
+    padding-top: 20px ;
 }
 .input .search{
     display: flex;
@@ -486,19 +487,23 @@ input::placeholder{
 }
 .transactionimg img:nth-child(1){
     position: relative;
+    margin: auto;
+    left: 300px;
 }
 .transactionimg img:nth-child(2){
-    position: absolute;
+    /* position: absolute;
+     */
+     position: relative;
     width: auto;
     height: auto;
-    margin-top: 600px ;
-    top: 2270px;
-    right: 130px;
+    right: 210px;
+    bottom: 10px;
+    top: 40px;
 }
 .transactionimg img:nth-child(3){
     position: relative;
     margin-bottom: 500px;
-    right: 120px;
+    right: 320px;
     width: 120px;
     top: 20px;
 }
@@ -562,6 +567,9 @@ input::placeholder{
     gap: 60px;
     padding: 0 50px;
     margin: 70px 0;
+    /* overflow-y: scroll; */
+    font-size: 20%;
+    /* -webkit-scrollbar-arrow-color: #826001; */
     /* flex-wrap:wrap; */
 }
 .payment img{
@@ -592,6 +600,8 @@ input::placeholder{
     letter-spacing: 0.015em;
     text-transform: capitalize;
     color: #000000;
+    font-size: 600%;
+
     /* width: 100%; */
 }
 .efficiency{
@@ -805,7 +815,7 @@ hr{
     line-height: 20px;
     color: #FFFFFF;
 }
-@media (max-width:500px){
+@media (max-width:700px){
     nav ul{
         display: none;
     }
@@ -851,9 +861,9 @@ hr{
         font-size: 19px;
         line-height: 21px;
     }
-    .fuel{
+    /* .fuel{
 
-    }
+    } */
     .fuel h1{
         font-size: 18px;
     }
@@ -908,11 +918,19 @@ hr{
         margin-top: 0;
         height: 300px;
     }
-    .transaction .transactionimg .pos{
-        position: absolute;
-        top: -610px;
-        left: 10px;
+    .transactionimg img:nth-child(1){
+        position: relative;
+        left:150px;
     }
+    .transactionimg img:nth-child(2){
+        position: relative;
+        top: -40px;
+        right: 120px;
+    }
+    /* .transaction .transactionimg .pos{
+        top: 0;
+        left: 100px;
+    } */
     .transactiontext p{
      display: none;
     }
@@ -1029,6 +1047,9 @@ hr{
         font-size: 20px;
         width: 70%;
     }
+    .faqhead p br{
+        display: none;
+    }
     .paymenttext h1{
         display: none;
     }
@@ -1046,7 +1067,7 @@ hr{
         color: #000000;
     }
 }
-@media (max-width: 1100px){
+@media (max-width: 1100px) and (min-width:701px){
     nav ul{
         display: none;
     }
@@ -1055,5 +1076,84 @@ hr{
     }
     nav button{
         display: flex;
+    }
+    .efficiency{
+        display: none;
+    }
+    .payment{
+        flex-direction: column;
+        padding: 520px 0px;
+        /* width: 80%; */
+        justify-content: center;
+        align-items: center;
+    }
+    .payment p{
+        /* width: 70%; */
+        padding: 0 40px;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .paymenttext h1{
+        display: none;
+    }
+    .payment img{
+        width: 450px;
+        margin: 5px 0 30px 0;
+    }
+    .payh1mobile{
+        display: block;
+        font-family: 'Poppins';
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 80px;
+        text-transform: capitalize;
+        color: #000000;
+    }
+    .about .aboutcontent{
+        flex-direction: column;
+        /* display: none; */
+    }
+    .aboutcontent .firsttext{
+        flex-direction: column-reverse;
+        padding-top: 200px;
+        justify-content: center;
+        align-items: first baseline;
+    }
+    .aboutcontent .firsttext p{
+        width: 100%;
+    }
+    .question{
+        padding: 150px 0;
+    }
+    .fuel h1{
+        font-size: 28px;
+    }
+    .fuel h1::after{
+        height: 5px;
+    }
+    .faqhead p{
+        display: none;
+    }
+    .transactionimg img:nth-child(2){
+       right: 200px;
+       top: 13px;
+    }
+    .transactionimg img:nth-child(3){
+        /* right: 10px; */
+        /* left: 0; */
+    }
+}
+
+@media (min-width:1101px) and (max-width:1214px){
+    .about .firsttext{
+        padding-top: 90px;
+    }
+    .payment{
+        overflow: hidden;
+    }
+    .payment img,.paymenttext{
+        width: 50%;
     }
 }
